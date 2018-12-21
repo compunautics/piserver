@@ -502,7 +502,7 @@ void PiServer::_patchDistributions()
         {
             string cmdlinetxt = _fileGetContents(cmdlinefile);
             string origCmdlinetxt = cmdlinetxt;
-            string newOptions = " ip=dhcp root=/dev/nfs nfsroot="+currentIP()+":"+kv.second->distroPath()+",v3";
+            string newOptions = " ip=dhcp root=/dev/nfs rw nfsroot="+currentIP()+":"+kv.second->distroPath()+",v3";
 
             /* Remove existing parameters from cmdline.txt */
             cmdlinetxt = regex_replace(cmdlinetxt, nfsrootRegex, "");
